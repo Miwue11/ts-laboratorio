@@ -6,7 +6,6 @@ interface GrupoMusical{
     año: number;
     activo: boolean;
     genero: string;
-
 }
 
 const rock= "🎸 Rock";

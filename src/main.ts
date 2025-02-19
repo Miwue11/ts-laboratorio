@@ -59,20 +59,16 @@ let grupo4: GrupoMusical = {
 }
 
 let grupo5: GrupoMusical = {
-    nombreGrupo: '%cThe Rolling Stones',
+    nombreGrupo: 'The Rolling Stones',
     cantantes: ['Mick Jagger', 'Keith Richards', 'Charlie Watts', 'Ronnie Wood'],
     compositor: 'Mick Jagger',
     año: 1962,
     activo: true,
     genero: `- ${rock}`
 }
-console.log(`%cThe Beatles`,color);
-console.log(grupo1,);
-console.log(`%cQueen`,color);
-console.log(grupo2);
-console.log(`%cAC DC`,color);
-console.log(grupo3);
-console.log(`%cLudwing Van Beethoven`,color);
-console.log(grupo4);
-console.log(`%cThe Rolling Stones`,color);
-console.log(grupo5);
+
+console.log(`%c${grupo1.nombreGrupo}`,color,grupo1);
+console.log(`%c${grupo2.nombreGrupo}`,color,grupo2);
+console.log(`%c${grupo3.nombreGrupo}`,color,grupo3);
+console.log(`%c${grupo4.nombreGrupo}`,color,grupo4);
+console.log(`%c${grupo5.nombreGrupo}`,color,grupo5);

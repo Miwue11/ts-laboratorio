@@ -1,5 +1,8 @@
 # typescript-sandbox
 
+## el laboratorio esta en el archivo main.ts, el otro son apuntes
+
+
 Para la parte de cada módulo en la que te planteamos ejercicios con JavaScript puedes usar este sandbox.
 
 Pasos:

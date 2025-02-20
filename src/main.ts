@@ -1,4 +1,5 @@
 
+
 interface GrupoMusical{
     nombreGrupo: string;
     cantantes: string[];
@@ -12,7 +13,6 @@ const rock= "🎸 Rock";
 const pop= "🎵 Pop Rock";
 const hardRock= "🤘 Hard Rock";
 const clasica= "🎼 Clasica";
-
 const color="background-color:green;font-weight:bold;font-size:20px";
 
 

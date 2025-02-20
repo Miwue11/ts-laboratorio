@@ -94,3 +94,147 @@
 
 // console.log(peliculaA);
 // console.log(peliculaB);
+
+
+
+//-------------------------------------------------------------
+// const areaDelCirculo=(r:number):number=>{ 
+//     const pi= Math.PI;
+//     return pi * r ** 2;
+// }
+// const areaC:number= areaDelCirculo(4);
+// console.log(areaC)
+
+
+// const areaDelCuadrado= (l:number):number=>
+//     l*l;
+
+// const areaCu:number= areaDelCuadrado(10);
+// console.log(areaCu)
+
+
+// function areaDelTriangulo(b:number,a:number):number{
+//     return b*a/2;
+// }
+// const areaT:number= areaDelTriangulo(4,5);
+// console.log(areaT)
+
+
+
+//-------------------------------------------------------------
+
+
+
+//FUNCION DE LA RECETA DE ENSALADA
+
+// const lechuga="🥬 lechuga";
+// const setas="🍄 setas";
+// const alubias="🫘 alubias";
+// const cebolla="🧅 cebolla";
+// const maiz="🌽 maiz";
+// const arandanos="🫐 arandano";
+// const aceitunas="🫒 aceitunas";
+// const piña="🍍 piña";
+// const mango="🥭 mango";
+// const zanahoria="🥕 zanahoria";
+// const tomate="🍅 tomate";
+// const pepino="🥒 pepino";
+// const aguacate="🥑 aguacate";
+// const bacon="🥓 bacon";
+// const huevos="🥚 huevo";
+// const queso="🧀 queso";
+// const pollo="🍗 pollo";
+// const nueces="🌰 nueces";
+
+// function pintaReceta(titulo:string,ingredientes:string,preparacion:string):void
+
+// {
+//     const estiloTitulo="color:red; font-size:18px";
+//     const estiloIngredientes="color:green; font-size:14px";
+//     const estiloPreparacion="color:indigo; font-size:12px; font-style:italic";
+//     //TITULO
+//     console.log(`%c${titulo}`, estiloTitulo);
+//     //INGREDIENTES
+//     console.log(`%c-Ingredientes: ${ingredientes}`,estiloIngredientes);
+//     //PREPARACION
+//     console.log(`%c-Preparacion: ${preparacion}`,estiloPreparacion);
+// }
+
+// console.log("*********************")
+// console.log(pintaReceta("Ensapada con alubias, aguacate y huevo",`${alubias}, ${aguacate}, ${huevos}, ${cebolla}, ${tomate}, ${lechuga}`,`cocer las alubias y dejar enfriar. Mezclar con aguacate en cubos, huevo cocido en rodajas, cebolla en juliana, tomate en cubos y lechuga troceada. Aliñar con aceite de oliva y vinagre.`));  
+// console.log("*********************")
+
+
+// console.log(pintaReceta("Ensalada de setas y bacon",`${setas}, ${bacon}, ${lechuga}, ${tomate}, ${cebolla}, ${queso}`,`saltear las setas y el bacon hasta que estén dorados. Mezclar con lechuga troceada, tomate en cubos, cebolla en juliana y queso rallado. Aliñar con aceite de oliva y vinagre.`));
+// console.log("*********************")
+
+// console.log(pintaReceta("Ensalada de arándanos y pollo",`${arandanos}, ${pollo}, ${lechuga}, ${zanahoria}, ${queso}, ${nueces}`,`mezclar los arándanos con el pollo cocido en cubos, lechuga troceada, zanahoria rallada, queso rallado y nueces picadas. Aliñar con una vinagreta de miel y mostaza.`));
+// console.log("*********************")
+
+// console.log(pintaReceta("Ensalada de maíz y piña",`${maiz}, ${piña}, ${lechuga}, ${pepino}, ${cebolla}, ${aguacate}`,`mezclar el maíz con la piña en cubos, lechuga troceada, pepino en rodajas, cebolla en juliana y aguacate en cubos. Aliñar con una vinagreta de aceite de oliva y vinagre.`));
+// console.log("*********************")
+
+// console.log(pintaReceta("Ensalada de mango y queso feta",`${mango}, ${queso}, ${lechuga}, ${cebolla}, ${pepino}, ${aceitunas}`,`mezclar el mango en cubos con el queso feta desmenuzado, lechuga troceada, cebolla en juliana, pepino en rodajas y aceitunas. Aliñar con una vinagreta de limón y aceite de oliva.`));
+
+// //----------------------------------------------//
+
+
+// function sumar(){
+//     //leer los valores de los imputs------le quitamos el posible valor de NULL con el (as HTMLInputElement)
+//     const sumando1= (document.getElementById("sumando1")as HTMLInputElement).value;
+//     const sumando2= (document.getElementById("sumando2")as HTMLInputElement).value;
+//     //sumar los valores
+//     const resultado=parseInt(sumando1)+parseInt(sumando2);
+//     //mostrar el resultado
+//     const resultadoElement=document.getElementById("resultado");
+//     if (resultadoElement !==null && resultadoElement !== undefined) //ponemos la condicion de que si es diferente de null y undefined, que lo muestre
+//     resultadoElement.innerHTML=resultado.toString();
+// }
+
+// const botonSumar=document.getElementById("sumar");
+//     if (botonSumar !==null && botonSumar !== undefined) //ponemos la condicion de que si es diferente de null y undefined, que lo muestre
+// botonSumar.addEventListener("click",sumar);
+
+
+//------------------------------------------------//
+
+// function cambiarFotoPrincipal(idMiniatura:string):void{
+//     const fotoPrincipal=(document.getElementById("foto-principal"));
+//     const miniatura=document.getElementById(idMiniatura);
+//     if(fotoPrincipal instanceof HTMLImageElement && miniatura instanceof HTMLImageElement)
+//     fotoPrincipal.src=miniatura.src;
+// }
+
+// const miniatura1=(document.getElementById("miniatura1")as HTMLImageElement);
+// const miniatura2=(document.getElementById("miniatura2")as HTMLImageElement);
+// const miniatura3=(document.getElementById("miniatura3")as HTMLImageElement);
+// const miniatura4=(document.getElementById("miniatura4")as HTMLImageElement);
+// const miniatura5=(document.getElementById("miniatura5")as HTMLImageElement);
+
+// if (miniatura1 && miniatura2 && miniatura3 && miniatura4 && miniatura5 !==null
+//     && miniatura1 && miniatura2 && miniatura3 && miniatura4 && miniatura5 !== undefined){
+//     miniatura1.addEventListener("click",()=>cambiarFotoPrincipal("miniatura1"));
+//     miniatura2.addEventListener("click",()=>cambiarFotoPrincipal("miniatura2"));
+//     miniatura3.addEventListener("click",()=>cambiarFotoPrincipal("miniatura3"));
+//     miniatura4.addEventListener("click",()=>cambiarFotoPrincipal("miniatura4"));
+//     miniatura5.addEventListener("click",()=>cambiarFotoPrincipal("miniatura5"));
+// }
+
+//------------------------------------------------//
+
+class Cliente{
+    nombre:string="";
+
+    constructor(nombre:string){
+        this.nombre=nombre;
+    }
+}
+
+let miNumero:any=2;
+let miObjeto:Cliente=new Cliente("Juan");
+
+miNumero instanceof Object; //false
+miObjeto instanceof Object; //true
+
+console.log(miNumero instanceof Object);
+console.log(miObjeto instanceof Cliente);

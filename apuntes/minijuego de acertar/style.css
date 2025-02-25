@@ -27,9 +27,8 @@ a:hover {
 body {
   margin: 0;
   place-items: center;
-  min-width: 400px;
-  min-height: 120vh;
-  background-color: #0088ff41;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 h1 {
@@ -67,14 +66,14 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid #0f15866d;
+  border: 1px solid #000dff6d;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s, background-color 0.25s 0.1s;
+  transition: border-color 0.25s;
 }
 button:hover {
   border-color: #000dff;
@@ -108,56 +107,13 @@ button:focus-visible {
   margin: 0;
   text-align: center;
 }
-#front{
-height: 120px;
-width: auto;
-}
-#resultado{
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-}
-#acierto{
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-  color: green;
-}
-#intentos{
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-}
-
-#front{
-  height: 120px;
-  width: auto;
-}
-#menor{
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-  color: rgba(0, 26, 255, 0.545);
-}
-#mayor{
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-  color: rgba(68, 0, 255, 0.575);
-} 
 #input{
   width: 50%;
   padding: 10px;
   margin: 40px 0;
   border-radius: 5px;
   border: 1px solid #2f282870;
-  color: #213547;
-} 
+}
 
 @media (prefers-color-scheme: light) {
   :root {

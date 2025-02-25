@@ -222,19 +222,127 @@
 
 //------------------------------------------------//
 
-class Cliente{
-    nombre:string="";
+// class Cliente{
+//     nombre:string="";
 
-    constructor(nombre:string){
-        this.nombre=nombre;
+//     constructor(nombre:string){
+//         this.nombre=nombre;
+//     }
+// }
+
+// let miNumero:any=2;
+// let miObjeto:Cliente=new Cliente("Juan");
+
+// miNumero instanceof Object; //false
+// miObjeto instanceof Object; //true
+
+// console.log(miNumero instanceof Object);
+// console.log(miObjeto instanceof Cliente);
+
+
+
+
+type Estado =
+    |"noEsNum"
+    |"esNumMayor"
+    |"esNumMenor"
+    |"esNumFueraDeRango"
+    |"esNumSecreto"
+    |"perder";
+
+let numeroParaAdivinar:number = Math.round(Math.random() * 100);
+console.log(numeroParaAdivinar);
+let mensaje:string="";
+let intentos:number=5;
+let finIntentos=0
+
+const intentosR=()=>
+{const intentosR = document.getElementById("intentos") as HTMLElement;
+intentosR.innerHTML=`Vas a tener solo ${intentos} intentos`;}
+
+intentosR();
+
+const apagarBoton=()=>{
+    if(boton instanceof HTMLButtonElement)
+        boton.disabled=true;
+}
+
+const muestraMensajeDeComprobacion=(texto:string,estado:Estado)=>{
+    switch(estado){
+        case "noEsNum":
+            mensaje="Debes introducir un número";
+            break;
+        case "esNumMayor":
+            restarIntentos();
+            if(intentos===finIntentos)
+            return; 
+            mensaje=`El número es mayor que ${texto}`;
+            break;
+        case "esNumMenor":
+            restarIntentos();
+            if(intentos===finIntentos)
+            return; 
+            mensaje=`El número es menor que ${texto}`;
+            break;
+        case "esNumFueraDeRango":
+            mensaje="El número debe estar entre 1 y 100";
+            break;
+        case "esNumSecreto":
+            mensaje="¡Has acertado!";
+            apagarBoton();
+            break;
+        case "perder":
+            mensaje="Has perdido, el numero era "+numeroParaAdivinar;
+            break;
+        default:
+            mensaje="Error";
+            break;
+    }
+    const resultado= document.getElementById("resultado")as HTMLElement;
+    resultado.innerHTML=mensaje;
+};
+
+const compruebaNumeroSecreto=(texto:string)=>{
+    const numero = parseInt(texto);
+    const esNum=!isNaN(numero);
+    if (!esNum){
+        return "noEsNum";
+    }
+    if (numero<1 || numero>100){
+        return "esNumFueraDeRango";
+    }
+    return (numero===numeroParaAdivinar&&intentos>0)
+        ?   "esNumSecreto"
+        :  (numero<numeroParaAdivinar&&intentos>0)
+            ?"esNumMayor"
+            :"esNumMenor";
+};
+
+const restarIntentos=()=>{
+    intentos--
+    intentosR();
+    if (intentos===finIntentos){
+        sinIntentos()
+    }
+};
+
+const sinIntentos=()=>{
+    intentosR();
+    if(boton instanceof HTMLButtonElement)
+    apagarBoton();
+    muestraMensajeDeComprobacion("","perder");
+}
+
+function handleClick(): void {
+    const input = document.getElementById("input");
+    if (input instanceof HTMLInputElement) {
+        const texto = input.value;
+        const estado = compruebaNumeroSecreto(texto);
+        muestraMensajeDeComprobacion(texto, estado);
     }
 }
 
-let miNumero:any=2;
-let miObjeto:Cliente=new Cliente("Juan");
-
-miNumero instanceof Object; //false
-miObjeto instanceof Object; //true
-
-console.log(miNumero instanceof Object);
-console.log(miObjeto instanceof Cliente);
+const boton=document.getElementById("boton");
+if (boton instanceof HTMLButtonElement && boton !==null && boton !== undefined){
+    boton.addEventListener("click",handleClick);
+}

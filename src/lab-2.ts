@@ -23,7 +23,6 @@
 //     año: 1960,
 //     activo: true,
 //     genero: `- ${pop}`
-
 // }
 
 // let grupo2: GrupoMusical = {
@@ -44,7 +43,6 @@
 //     año: 1973,
 //     activo: true,
 //     genero: `- ${hardRock}`
-
 // }
 
 // let grupo4: GrupoMusical = {
@@ -54,7 +52,6 @@
 //     año: 1770,
 //     activo: false,
 //     genero: `- ${clasica}`
-
 // }
 
 // let grupo5: GrupoMusical = {

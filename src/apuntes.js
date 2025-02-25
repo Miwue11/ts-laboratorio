@@ -395,3 +395,212 @@ emoticonos:
 
 
 
+//CONDICIONALES
+
+//OPERADORES DE COMPARACION
+// == igual
+// === igual en valor y tipo
+// != distinto
+// > mayor que
+// < menor que
+// >= mayor o igual que
+// <= menor o igual que
+
+//OPERADORES LOGICOS
+// && and
+// || or
+// ! not
+
+
+// const acierto=true;
+// const numeroIntentos=3;
+// const maxIntentos=3;
+
+// if(acierto===true && numeroIntentos<=maxIntentos){
+//     console.log("¡Has acertado!");
+// }
+// else{
+//     console.log("¡Has fallado!");
+// }
+
+
+// const haAcertado=(numeroAdivinar,numeroUsuario)=>{
+//     if(numeroAdivinar===numeroUsuario){
+//         return "¡Has acertado!";
+//     }
+//     else if(numeroAdivinar>numeroUsuario){
+//         return "El número es mayor";
+//     }
+//     else{
+//         return "El número es menor";
+//     }
+// }
+
+// console.log(haAcertado(3,5));
+// console.log(haAcertado(5,3));
+// console.log(haAcertado(5,5));
+
+
+// const intentos=(numeroIntentos,maxIntentos)=>{
+//     if(numeroIntentos>maxIntentos){
+//         return "has superado el numero de intentos"
+//     }
+//     else{
+//         return "aun te quedan intentos"
+//     }
+// }
+
+// console.log(intentos(4,5));
+// console.log(intentos(8,5))
+
+
+
+
+// const boton = document.getElementById("boton");
+// const input = document.getElementById("input");
+// const resultado = document.getElementById("resultado");
+// const intentosR = document.getElementById("intentos");
+// const mayor = document.getElementById("mayor");
+// const menor = document.getElementById("menor");
+// const acierto = document.getElementById("acierto");
+// let numeroAdivinar=Math.random()*100;
+// numeroAdivinar=Math.round(numeroAdivinar);
+// console.log(numeroAdivinar);
+// let intentos=6;
+// intentosR.innerHTML="Vas a tener solo 6 intentos...";
+
+// boton.addEventListener("click",function(){
+//     const numeroUsuario=parseInt(input.value);
+
+//     if(numeroUsuario<0 || numeroUsuario>100){
+//         resultado.innerHTML="El número debe estar entre 0 y 100";
+//         mayor.innerHTML="";
+//         menor.innerHTML="";
+//         intentos++;
+//     }
+//     if(numeroAdivinar===numeroUsuario){
+//         boton.disabled=true;
+//         mayor.innerHTML="";
+//         menor.innerHTML="";
+//         intentosR.innerHTML="";
+//         acierto.innerHTML="¡Has acertado!";
+//         resultado.innerHTML="";
+//     }
+//     if(numeroUsuario<=100 && numeroUsuario>=0){
+//         mayor.innerHTML="";
+//         menor.innerHTML="";
+//     }
+//     if(numeroAdivinar>numeroUsuario){ 
+//         menor.innerHTML="";
+//         mayor.innerHTML="El número es mayor";
+//     }
+//     if(numeroAdivinar<numeroUsuario){
+//         mayor.innerHTML="";
+//         menor.innerHTML="El número es menor";
+//     }
+//     if(intentos>0 && numeroAdivinar!==numeroUsuario){
+//         intentos--;
+//         intentosR.innerHTML="te quedan "+intentos+" intentos";
+
+//     }
+//     if(intentos===0){
+//         boton.disabled=true;
+//         mayor.innerHTML="";
+//         menor.innerHTML="";
+//         intentosR.innerHTML="";
+//         resultado.innerHTML="¡Has fallado!, el numero era "+numeroAdivinar;
+//     }
+// });
+
+//-------------------------------------------------//
+
+
+
+
+// const noEsNum=0;
+// const esNumMayor=1;
+// const esNumMenor=2;
+// const esNumSecreto=3;
+// const esNumFueraDeRango=4;
+// const perder=5;
+// const intentosR = document.getElementById("intentos");
+// const generarNum= ()=> Math.round(Math.random() * 100);
+// const numeroParaAdivinar= generarNum();
+// console.log(numeroParaAdivinar);
+// let mensaje="";
+// let intentos=6;
+
+// intentosR.innerHTML=`Vas a tener solo ${intentos} intentos`;
+
+// const muestraMensajeDeComprobacion=(texto,estado)=>{
+//     switch(estado){
+//         case noEsNum:
+//             mensaje="Debes introducir un número";
+//             break;
+//         case esNumMayor:
+//             restarIntentos();
+//             if(intentos===0)
+//             return; 
+//             mensaje=`El número es mayor que ${texto}`;
+//             break;
+//         case esNumMenor:
+//             restarIntentos();
+//             if(intentos===0)
+//             return; 
+//             mensaje=`El número es menor que ${texto}`;
+//             break;
+//         case esNumFueraDeRango:
+//             mensaje="El número debe estar entre 1 y 100";
+//             break;
+//         case esNumSecreto:
+//             mensaje="¡Has acertado!";
+//             break;
+//         case perder:
+//             mensaje="Has perdido, el numero era "+ numeroParaAdivinar;
+//             break;
+//         default:
+//             mensaje="Error";
+//             break;
+//     }
+//     document.getElementById("resultado").innerHTML=mensaje;
+// };
+
+
+// const compruebaNumeroSecreto=(texto)=>{
+//     const numero = parseInt(texto);
+//     const esNum=!isNaN(numero);
+//     if (!esNum){
+//         return noEsNum;
+//     }
+//     if (numero<1 || numero>100){
+//         return esNumFueraDeRango;
+//     }
+//     return (numero===numeroParaAdivinar&&intentos>0)
+//         ?  esNumSecreto
+//         :  (numero<numeroParaAdivinar&&intentos>0)
+//             ?esNumMayor
+//             :esNumMenor;
+// };
+
+// const restarIntentos=()=>{
+//     intentos--
+//     intentosR.innerHTML=`Te quedan ${intentos} intentos`;
+//     if (intentos===0){
+//         sinIntentos()
+//     }
+// };
+
+// const sinIntentos=()=>{
+//     intentosR.innerHTML=`Te quedaste sin intentos...`
+//     document.getElementById("boton").disabled=true;
+//     muestraMensajeDeComprobacion("",perder);
+// }
+
+// const handleClick=()=>{
+//     const texto=document.getElementById("input").value;
+//     const estado=compruebaNumeroSecreto(texto);
+//     muestraMensajeDeComprobacion(texto,estado);
+// }
+
+// const boton=document.getElementById("boton");
+// boton.addEventListener("click",handleClick);

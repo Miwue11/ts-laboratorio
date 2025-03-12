@@ -15,5 +15,12 @@
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "apuntes/minijuego de acertar/lab-2.ts",
+    "apuntes/lab-1.ts",
+    "apuntes/bingo/model.ts",
+    "apuntes/bingo/motor.ts",
+    "apuntes/bingo/shell.ts"
+  ]
 }

@@ -13,7 +13,6 @@
 
 // console.log(nombre, apellido);
 
-
 //----------------------------------------------//
 // let nombre;
 
@@ -21,13 +20,11 @@
 
 // console.log(nombre); //23, ahora si podemos poner un int o un float, ya que no se le asigno un tipo de dato
 
-
 //----------------------------------------------//
 
 // let nombre: string; //ya se queda como string y no es mutable
 
 // let nombre2:string|null =null //ahorsa deja añadir con el OR cualquier parametro por ejemplo null
-
 
 // let edad:string|number = 23;
 
@@ -35,16 +32,11 @@
 
 // console.log(edad); //hola, ahora si podemos poner un int o un float, ya que no se le asigno un tipo de dato
 
-
-
 //usamos el any para poder usar any tipo de dato (es peligroso)
-// let nombre: any = "Juan"; 
+// let nombre: any = "Juan";
 
 // nombre=23;
 // console.log(nombre); //23, ahora si podemos poner un int o un float, ya que no se le asigno un tipo de dato
-
-
-
 
 //interface
 // interface Cliente{
@@ -71,9 +63,6 @@
 // console.log(clienteA); //24
 // console.log(clienteB); //26
 
-
-
-
 // interface Pelicula{
 //     titulo: string;
 //     director: string;
@@ -95,16 +84,13 @@
 // console.log(peliculaA);
 // console.log(peliculaB);
 
-
-
 //-------------------------------------------------------------
-// const areaDelCirculo=(r:number):number=>{ 
+// const areaDelCirculo=(r:number):number=>{
 //     const pi= Math.PI;
 //     return pi * r ** 2;
 // }
 // const areaC:number= areaDelCirculo(4);
 // console.log(areaC)
-
 
 // const areaDelCuadrado= (l:number):number=>
 //     l*l;
@@ -112,18 +98,13 @@
 // const areaCu:number= areaDelCuadrado(10);
 // console.log(areaCu)
 
-
 // function areaDelTriangulo(b:number,a:number):number{
 //     return b*a/2;
 // }
 // const areaT:number= areaDelTriangulo(4,5);
 // console.log(areaT)
 
-
-
 //-------------------------------------------------------------
-
-
 
 //FUNCION DE LA RECETA DE ENSALADA
 
@@ -161,9 +142,8 @@
 // }
 
 // console.log("*********************")
-// console.log(pintaReceta("Ensapada con alubias, aguacate y huevo",`${alubias}, ${aguacate}, ${huevos}, ${cebolla}, ${tomate}, ${lechuga}`,`cocer las alubias y dejar enfriar. Mezclar con aguacate en cubos, huevo cocido en rodajas, cebolla en juliana, tomate en cubos y lechuga troceada. Aliñar con aceite de oliva y vinagre.`));  
+// console.log(pintaReceta("Ensapada con alubias, aguacate y huevo",`${alubias}, ${aguacate}, ${huevos}, ${cebolla}, ${tomate}, ${lechuga}`,`cocer las alubias y dejar enfriar. Mezclar con aguacate en cubos, huevo cocido en rodajas, cebolla en juliana, tomate en cubos y lechuga troceada. Aliñar con aceite de oliva y vinagre.`));
 // console.log("*********************")
-
 
 // console.log(pintaReceta("Ensalada de setas y bacon",`${setas}, ${bacon}, ${lechuga}, ${tomate}, ${cebolla}, ${queso}`,`saltear las setas y el bacon hasta que estén dorados. Mezclar con lechuga troceada, tomate en cubos, cebolla en juliana y queso rallado. Aliñar con aceite de oliva y vinagre.`));
 // console.log("*********************")
@@ -177,7 +157,6 @@
 // console.log(pintaReceta("Ensalada de mango y queso feta",`${mango}, ${queso}, ${lechuga}, ${cebolla}, ${pepino}, ${aceitunas}`,`mezclar el mango en cubos con el queso feta desmenuzado, lechuga troceada, cebolla en juliana, pepino en rodajas y aceitunas. Aliñar con una vinagreta de limón y aceite de oliva.`));
 
 // //----------------------------------------------//
-
 
 // function sumar(){
 //     //leer los valores de los imputs------le quitamos el posible valor de NULL con el (as HTMLInputElement)
@@ -194,7 +173,6 @@
 // const botonSumar=document.getElementById("sumar");
 //     if (botonSumar !==null && botonSumar !== undefined) //ponemos la condicion de que si es diferente de null y undefined, que lo muestre
 // botonSumar.addEventListener("click",sumar);
-
 
 //------------------------------------------------//
 
@@ -239,110 +217,229 @@
 // console.log(miNumero instanceof Object);
 // console.log(miObjeto instanceof Cliente);
 
+// Tendrás que generar un número aleatorio que sea del 1 al 6.
 
+// Si sale el dado 6, hemos perdido la partida, has sacado un 6, has perdido. En caso contrario seguiremos tirando hasta llegar a 50 puntos o más has obtenido 50 puntos o mas, has ganado la partida.
 
+// En cualquier momento podrás plantarte, y mostrar el mensaje Te has plantado, tienes x puntos.
 
-type Estado =
-    |"noEsNum"
-    |"esNumMayor"
-    |"esNumMenor"
-    |"esNumFueraDeRango"
-    |"esNumSecreto"
-    |"perder";
+// Muestra dichos mensajes en el html.
 
-let numeroParaAdivinar:number = Math.round(Math.random() * 100);
-console.log(numeroParaAdivinar);
-let mensaje:string="";
-let intentos:number=5;
-let finIntentos=0
+// Create un proyecto donde generes el código con el juego (acuerdate de dividir el código, que cada función haga una cosa y solo una cosa...)
+// Del ejercicio anterior create otro proyecto donde separes el código en modelo, motor y ui.
+// En el último proyecto usaremos el caso anterior para aplicar testing a las funciones de motor.
 
-const intentosR=()=>
-{const intentosR = document.getElementById("intentos") as HTMLElement;
-intentosR.innerHTML=`Vas a tener solo ${intentos} intentos`;}
+// Extra:
+// Tanto si has ganado o perdido al partida, bloquear el botón de tirar dado y el de plantarse
+// Si me planto, el botón de tirar también se bloqueará y de la misma manera el de plantarse.
+// Añade un css para darle estilado a tu html.
 
-intentosR();
+// const plantarse = document.getElementById("plantarse") as HTMLButtonElement;
+// const intentosDiv = document.getElementById("intentos") as HTMLDivElement;
+// const dadoImg = document.getElementById("dado") as HTMLImageElement;
+// const resultadoDiv = document.getElementById("resultado") as HTMLDivElement;
+// const mensajeDiv = document.getElementById("mensaje") as HTMLDivElement;
 
-const apagarBoton=()=>{
-    if(boton instanceof HTMLButtonElement)
-        boton.disabled=true;
-}
+// let total = 0;
+// let gameActive = true;
 
-const muestraMensajeDeComprobacion=(texto:string,estado:Estado)=>{
-    switch(estado){
-        case "noEsNum":
-            mensaje="Debes introducir un número";
-            break;
-        case "esNumMayor":
-            restarIntentos();
-            if(intentos===finIntentos)
-            return; 
-            mensaje=`El número es mayor que ${texto}`;
-            break;
-        case "esNumMenor":
-            restarIntentos();
-            if(intentos===finIntentos)
-            return; 
-            mensaje=`El número es menor que ${texto}`;
-            break;
-        case "esNumFueraDeRango":
-            mensaje="El número debe estar entre 1 y 100";
-            break;
-        case "esNumSecreto":
-            mensaje="¡Has acertado!";
-            apagarBoton();
-            break;
-        case "perder":
-            mensaje="Has perdido, el numero era "+numeroParaAdivinar;
-            break;
-        default:
-            mensaje="Error";
-            break;
-    }
-    const resultado= document.getElementById("resultado")as HTMLElement;
-    resultado.innerHTML=mensaje;
-};
+// const perder=()=> {
+//     resultadoDiv.textContent = "Has perdido. Has sacado un 6.";
+//     gameActive = false;
+//     if(boton instanceof HTMLButtonElement)
+//     boton.disabled = true;
+//     plantarse.disabled = true;
+// };
 
-const compruebaNumeroSecreto=(texto:string)=>{
-    const numero = parseInt(texto);
-    const esNum=!isNaN(numero);
-    if (!esNum){
-        return "noEsNum";
-    }
-    if (numero<1 || numero>100){
-        return "esNumFueraDeRango";
-    }
-    return (numero===numeroParaAdivinar&&intentos>0)
-        ?   "esNumSecreto"
-        :  (numero<numeroParaAdivinar&&intentos>0)
-            ?"esNumMayor"
-            :"esNumMenor";
-};
+// const ganar=()=> {
+//     resultadoDiv.textContent = "¡Felicidades! ¡Has ganado con 50 puntos o más!";
+//     gameActive = false;
+//     if(boton instanceof HTMLButtonElement)
+//     boton.disabled = true;
+//     plantarse.disabled = true;
+//     }
 
-const restarIntentos=()=>{
-    intentos--
-    intentosR();
-    if (intentos===finIntentos){
-        sinIntentos()
-    }
-};
+// const actualizarIntentos=()=> {
+//     intentosDiv.textContent = `Puntuación: ${total}`;
+// }
 
-const sinIntentos=()=>{
-    intentosR();
-    if(boton instanceof HTMLButtonElement)
-    apagarBoton();
-    muestraMensajeDeComprobacion("","perder");
-}
+// const actualizarDado=(valor: number)=> {
+//     switch(valor){
+//         case 1:
+//             dadoImg.src = `https://media.tenor.com/tCq5mfycACMAAAAi/d20-dice-roll.gif`;
+//             dadoImg.alt = `Dado mostrando 1`;
+//             break;
+//         case 2:
+//             dadoImg.src = `https://media.tenor.com/zTg9FhOqpDIAAAAi/d20-dice-roll.gif`;
+//             dadoImg.alt = `Dado mostrando 2`;
+//             break;
+//         case 3:
+//             dadoImg.src = `https://media.tenor.com/8UcqJlc93EgAAAAi/d20-dice-roll.gif`;
+//             dadoImg.alt = `Dado mostrando 3`;
+//             break;
+//         case 4:
+//             dadoImg.src = `https://media.tenor.com/l-95tTbEKGkAAAAm/d20-dice-roll.webp`;
+//             dadoImg.alt = `Dado mostrando 4`;
+//             break;
+//         case 5:
+//             dadoImg.src = `https://media.tenor.com/r7bAmy9lpJUAAAAm/d20-dice-roll.webp`;
+//             dadoImg.alt = `Dado mostrando 5`;
+//             break;
+//         case 6:
+//             dadoImg.src = `https://media.tenor.com/HEHpab5WZHwAAAAm/d20-dice-roll.webp`;
+//             dadoImg.alt = `Dado mostrando 6`;
+//             break;
+//         default:
+//             break;
+// }};
 
-function handleClick(): void {
-    const input = document.getElementById("input");
-    if (input instanceof HTMLInputElement) {
-        const texto = input.value;
-        const estado = compruebaNumeroSecreto(texto);
-        muestraMensajeDeComprobacion(texto, estado);
-    }
-}
+// function eventos(){
+//     if(boton instanceof HTMLButtonElement){
+// boton.addEventListener("click", () => {
+//     const numero = Math.floor(Math.random() * 6) + 1;
+//     actualizarDado(numero);
 
-const boton=document.getElementById("boton");
-if (boton instanceof HTMLButtonElement && boton !==null && boton !== undefined){
-    boton.addEventListener("click",handleClick);
-}
+//     total += numero;
+//     actualizarIntentos();
+
+//     if (numero === 6) {
+//         perder();
+//     }
+//     if (total >= 50) {
+//         ganar();
+//     }
+// });
+
+// if(plantarse instanceof HTMLButtonElement){
+//     plantarse.addEventListener("click", () => {
+//         if (!gameActive) return;
+
+//     resultadoDiv.textContent = `Te has plantado con ${total} puntos.`;
+//     boton.disabled = true;
+//     plantarse.disabled = true;
+//     gameActive = false;
+//     });
+//         };
+// };}
+
+// eventos();
+
+//vamos a crea un bingo con 90 bolas, 15 bolas por fila, 3 filas, 5 números por fila.
+//Cada vez que se saque una bola, se mostrará en el html y se eliminará de la lista de bolas.
+//Se podrá sacar una bola cada vez que se pulse un botón.
+//Cuando se saquen todas las bolas, se mostrará un mensaje en el html.
+//Se mostrará un mensaje en el html cuando se cante línea y cuando se cante bingo.
+//Se mostrará un botón en el html para reiniciar el juego.
+
+// main.ts
+//vamos a crea un bingo con 90 bolas, 15 bolas por fila, 3 filas, 5 números por fila.
+//Cada vez que se saque una bola, se mostrará en el html y se eliminará de la lista de bolas.
+//Se podrá sacar una bola cada vez que se pulse un botón.
+//Cuando se saquen todas las bolas, se mostrará un mensaje en el html.
+//Se mostrará un mensaje en el html cuando se cante línea y cuando se cante bingo.
+//Se mostrará un botón en el html para reiniciar el juego.
+
+// type Estado =
+//     |"noEsNum"
+//     |"esNumMayor"
+//     |"esNumMenor"
+//     |"esNumFueraDeRango"
+//     |"esNumSecreto"
+//     |"perder";
+
+// let numeroParaAdivinar:number = Math.round(Math.random() * 100);
+// console.log(numeroParaAdivinar);
+// let mensaje:string="";
+// let intentos:number=5;
+// let finIntentos=0
+
+// const intentosR=()=>
+// {const intentosR = document.getElementById("intentos") as HTMLElement;
+// intentosR.innerHTML=`Vas a tener solo ${intentos} intentos`;}
+
+// intentosR();
+
+// const apagarBoton=()=>{
+//     if(boton instanceof HTMLButtonElement)
+//         boton.disabled=true;
+// }
+
+// const muestraMensajeDeComprobacion=(texto:string,estado:Estado)=>{
+//     switch(estado){
+//         case "noEsNum":
+//             mensaje="Debes introducir un número";
+//             break;
+//         case "esNumMayor":
+//             restarIntentos();
+//             if(intentos===finIntentos)
+//             return;
+//             mensaje=`El número es mayor que ${texto}`;
+//             break;
+//         case "esNumMenor":
+//             restarIntentos();
+//             if(intentos===finIntentos)
+//             return;
+//             mensaje=`El número es menor que ${texto}`;
+//             break;
+//         case "esNumFueraDeRango":
+//             mensaje="El número debe estar entre 1 y 100";
+//             break;
+//         case "esNumSecreto":
+//             mensaje="¡Has acertado!";
+//             apagarBoton();
+//             break;
+//         case "perder":
+//             mensaje="Has perdido, el numero era "+numeroParaAdivinar;
+//             break;
+//         default:
+//             mensaje="Error";
+//             break;
+//     }
+//     const resultado= document.getElementById("resultado")as HTMLElement;
+//     resultado.innerHTML=mensaje;
+// };
+
+// const compruebaNumeroSecreto=(texto:string)=>{
+//     const numero = parseInt(texto);
+//     const esNum=!isNaN(numero);
+//     if (!esNum){
+//         return "noEsNum";
+//     }
+//     if (numero<1 || numero>100){
+//         return "esNumFueraDeRango";
+//     }
+//     return (numero===numeroParaAdivinar&&intentos>0)
+//         ?   "esNumSecreto"
+//         :  (numero<numeroParaAdivinar&&intentos>0)
+//             ?"esNumMayor"
+//             :"esNumMenor";
+// };
+
+// const restarIntentos=()=>{
+//     intentos--
+//     intentosR();
+//     if (intentos===finIntentos){
+//         sinIntentos()
+//     }
+// };
+
+// const sinIntentos=()=>{
+//     intentosR();
+//     if(boton instanceof HTMLButtonElement)
+//     apagarBoton();
+//     muestraMensajeDeComprobacion("","perder");
+// }
+
+// function handleClick(): void {
+//     const input = document.getElementById("input");
+//     if (input instanceof HTMLInputElement) {
+//         const texto = input.value;
+//         const estado = compruebaNumeroSecreto(texto);
+//         muestraMensajeDeComprobacion(texto, estado);
+//     }
+// }
+
+// const boton=document.getElementById("boton");
+// if (boton instanceof HTMLButtonElement && boton !==null && boton !== undefined){
+//     boton.addEventListener("click",handleClick);
+// }

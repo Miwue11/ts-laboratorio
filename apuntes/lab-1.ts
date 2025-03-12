@@ -7,22 +7,17 @@
 //     genero: string;
 // }
 
-// <<<<<<< HEAD
-
 // const intentosDiv = document.getElementById("intentos") as HTMLDivElement;
 // const dadoImg = document.getElementById("dado") as HTMLImageElement;
 // const resultadoDiv = document.getElementById("resultado") as HTMLDivElement;
 // const mensajeDiv = document.getElementById("mensaje") as HTMLDivElement;
 
-
 // let total = 0;
 // let gameActive = true;
-
 
 // const actualizarIntentos=()=> {
 //     intentosDiv.textContent = `Puntuación: ${total}`;
 // }
-
 
 // const actualizarDado=(valor: number)=> {
 
@@ -32,13 +27,11 @@
 // if(boton instanceof HTMLButtonElement){
 // boton.addEventListener("click", () => {
 
-
 //     const numero = Math.floor(Math.random() * 6) + 1;
 //     actualizarDado(numero);
 
 //     total += numero;
 //     actualizarIntentos();
-
 
 //     if (total === 21) {
 //     resultadoDiv.textContent = "¡Felicidades! ¡Has ganado con 21 puntos!";
@@ -51,8 +44,8 @@
 
 // if(plantarse instanceof HTMLButtonElement){
 // plantarse.addEventListener("click", () => {
-//     if (!gameActive) return; 
-    
+//     if (!gameActive) return;
+
 //     resultadoDiv.textContent = `Te has plantado con ${total} puntos.`;
 //     gameActive = false;
 // }
@@ -79,4 +72,3 @@
 // ];
 
 // gruposMusicales.forEach(grupo => console.log(`%c${grupo.nombreGrupo}`, color, grupo));
-// >>>>>>> c7b43cd997db161db4579554d8850a2105d3e7d1

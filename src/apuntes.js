@@ -1,19 +1,15 @@
 //sitio para buscar emojis
 //  https://emojiterra.com/es//
 
+//formatear el console.log para añadir parametros css
 
-//formatear el console.log para añadir parametros css 
-//  https://how.dev/answers/how-to-format-messages-in-consolelog-in-javascript
-
-
-
+//https://how.dev/answers/how-to-format-messages-in-consolelog-in-javascript
 
 // // logicas
 // var radio=4;
 // const pi=Math.PI;
 // const area=  pi * radio **2;
 // console.log(area);
-
 
 // // objetos concatenados
 // var cliente={
@@ -32,7 +28,6 @@
 // //undifined
 // console.log(undefined)
 
-
 //operadores con ejemplo de mi abogado
 // let comision_abogado=0.15;
 // let iva=1.21;
@@ -41,8 +36,6 @@
 // var dinero_a_percibir=finiquito-dinero_al_abogado;
 
 // console.log(Math.round(dinero_a_percibir));
-
-
 
 //const asigna al objeto completo pero vemos que podemos cambiar sus datos con el punto
 // const cliente={
@@ -61,12 +54,10 @@
 // };
 
 // cliente.nombre="Miguel Angel"; //cambia el nombre
-// cliente.edad=31;  //cambia la edad 
+// cliente.edad=31;  //cambia la edad
 
 // console.log(cliente.nombre); //muestra el nombre
 // console.log(cliente);  //muestra el objeto completo
-
-
 
 //cambiamos el valor de la fecha de publicacion a const y let y si se puede
 //cambiar el libro entero en const es invalido.
@@ -77,8 +68,6 @@
 // };
 // libro.fecha_de_publicacion=1920;
 // console.log(libro)
-
-
 
 //cambiamos datos de let y const y vemos que se puede cambiar el valor de la variable
 // let nombre="Miguel";
@@ -92,10 +81,6 @@
 // apellido=ciudad.pais;
 
 // console.log(nombre+" "+apellido); //concatenacion (saldria Madrid España)
-
-
-
-
 
 /*
 Ensalada de alubias con aguacate y huevo
@@ -133,8 +118,6 @@ troceada, cebolla en juliana, pepino en rodajas y aceitunas. Aliñar con una
 vinagreta de limón y aceite de oliva.
 */
 
-
-
 /*
 emoticonos:
     🥬 Lechuga
@@ -154,7 +137,6 @@ emoticonos:
     🥚 huevos
     🧀 Queso
 */
-
 
 // const estiloTitulo="color:red; font-size:18px";
 // const estiloIngredientes="color:green; font-size:14px";
@@ -178,7 +160,6 @@ emoticonos:
 // const queso="🧀 queso";
 // const pollo="🍗 pollo";
 // const nueces="🌰 nueces";
-
 
 // //TITULO
 // console.log("%cEnsalada de alubias con aguacate y huevo", estiloTitulo);  //color azul y tamaño de letra 18px
@@ -226,7 +207,7 @@ emoticonos:
 
 // //INGREDIENTES
 
-// console.log(`-%cIngredientes: ${maiz}, ${piña}, ${lechuga}, ${pepino}, ${cebolla}, ${aguacate}`,estiloIngredientes); 
+// console.log(`-%cIngredientes: ${maiz}, ${piña}, ${lechuga}, ${pepino}, ${cebolla}, ${aguacate}`,estiloIngredientes);
 
 // //PREPARACION
 
@@ -234,7 +215,7 @@ emoticonos:
 
 // console.log("*********************")
 
-// //TITULO    
+// //TITULO
 
 // console.log("%cEnsalada de mango y queso feta", estiloTitulo);  //color azul y tamaño de letra 18px
 
@@ -248,10 +229,7 @@ emoticonos:
 
 // console.log("*********************")
 
-
-
 //----------------------------------------------//
-
 
 //FUNCIONES
 
@@ -270,15 +248,12 @@ emoticonos:
 // }
 // console.log(resta(20,33))
 
-
 //AREAS GEOMETRICAS EN FUNCIONES
 
 // function area_del_circulo(radio){
 //     return 2* Math.PI * radio **2;
 // }
 // console.log(area_del_circulo(3));
-
-
 
 // function area_del_cuadrado(lado){
 //     return lado*lado;
@@ -291,9 +266,7 @@ emoticonos:
 // let resultado=area_del_rectangulo(3,4);
 // console.log(resultado);
 
-
 // //----------------------------------------------//
-
 
 // //FUNCION DE LA RECETA DE ENSALADA
 
@@ -329,9 +302,8 @@ emoticonos:
 // }
 
 // console.log("*********************")
-// console.log(pintaReceta("Ensapada con alubias, aguacate y huevo",`${alubias}, ${aguacate}, ${huevos}, ${cebolla}, ${tomate}, ${lechuga}`,`cocer las alubias y dejar enfriar. Mezclar con aguacate en cubos, huevo cocido en rodajas, cebolla en juliana, tomate en cubos y lechuga troceada. Aliñar con aceite de oliva y vinagre.`));  
+// console.log(pintaReceta("Ensapada con alubias, aguacate y huevo",`${alubias}, ${aguacate}, ${huevos}, ${cebolla}, ${tomate}, ${lechuga}`,`cocer las alubias y dejar enfriar. Mezclar con aguacate en cubos, huevo cocido en rodajas, cebolla en juliana, tomate en cubos y lechuga troceada. Aliñar con aceite de oliva y vinagre.`));
 // console.log("*********************")
-
 
 // console.log(pintaReceta("Ensalada de setas y bacon",`${setas}, ${bacon}, ${lechuga}, ${tomate}, ${cebolla}, ${queso}`,`saltear las setas y el bacon hasta que estén dorados. Mezclar con lechuga troceada, tomate en cubos, cebolla en juliana y queso rallado. Aliñar con aceite de oliva y vinagre.`));
 // console.log("*********************")
@@ -346,7 +318,6 @@ emoticonos:
 
 // //----------------------------------------------//
 
-
 // function saludar(){
 //     //leer los valores de los imputs
 //     const nombre= document.getElementById("nombre").value;
@@ -358,9 +329,6 @@ emoticonos:
 // }
 // const boton=document.getElementById("boton");
 // boton.addEventListener("click",saludar);
-
-
-
 
 //------------------------------------------------//
 
@@ -387,13 +355,11 @@ emoticonos:
 //     cambiarFotoPrincipal("miniatura3");
 // });
 
-// miniatura4.addEventListener("click",()=> 
+// miniatura4.addEventListener("click",()=>
 //     cambiarFotoPrincipal("miniatura4"));
 
 // miniatura5.addEventListener("click",()=>
 //     cambiarFotoPrincipal("miniatura5"));
-
-
 
 //CONDICIONALES
 
@@ -411,7 +377,6 @@ emoticonos:
 // || or
 // ! not
 
-
 // const acierto=true;
 // const numeroIntentos=3;
 // const maxIntentos=3;
@@ -422,7 +387,6 @@ emoticonos:
 // else{
 //     console.log("¡Has fallado!");
 // }
-
 
 // const haAcertado=(numeroAdivinar,numeroUsuario)=>{
 //     if(numeroAdivinar===numeroUsuario){
@@ -440,7 +404,6 @@ emoticonos:
 // console.log(haAcertado(5,3));
 // console.log(haAcertado(5,5));
 
-
 // const intentos=(numeroIntentos,maxIntentos)=>{
 //     if(numeroIntentos>maxIntentos){
 //         return "has superado el numero de intentos"
@@ -452,9 +415,6 @@ emoticonos:
 
 // console.log(intentos(4,5));
 // console.log(intentos(8,5))
-
-
-
 
 // const boton = document.getElementById("boton");
 // const input = document.getElementById("input");
@@ -490,7 +450,7 @@ emoticonos:
 //         mayor.innerHTML="";
 //         menor.innerHTML="";
 //     }
-//     if(numeroAdivinar>numeroUsuario){ 
+//     if(numeroAdivinar>numeroUsuario){
 //         menor.innerHTML="";
 //         mayor.innerHTML="El número es mayor";
 //     }
@@ -514,24 +474,22 @@ emoticonos:
 
 //-------------------------------------------------//
 
-
-
-
 // const noEsNum=0;
 // const esNumMayor=1;
 // const esNumMenor=2;
 // const esNumSecreto=3;
 // const esNumFueraDeRango=4;
 // const perder=5;
+
 // const intentosR = document.getElementById("intentos");
 // const generarNum= ()=> Math.round(Math.random() * 100);
+
 // const numeroParaAdivinar= generarNum();
 // console.log(numeroParaAdivinar);
+
 // let mensaje="";
 // let intentos=6;
-
 // intentosR.innerHTML=`Vas a tener solo ${intentos} intentos`;
-
 // const muestraMensajeDeComprobacion=(texto,estado)=>{
 //     switch(estado){
 //         case noEsNum:
@@ -540,13 +498,13 @@ emoticonos:
 //         case esNumMayor:
 //             restarIntentos();
 //             if(intentos===0)
-//             return; 
+//             return;
 //             mensaje=`El número es mayor que ${texto}`;
 //             break;
 //         case esNumMenor:
 //             restarIntentos();
 //             if(intentos===0)
-//             return; 
+//             return;
 //             mensaje=`El número es menor que ${texto}`;
 //             break;
 //         case esNumFueraDeRango:
@@ -564,8 +522,6 @@ emoticonos:
 //     }
 //     document.getElementById("resultado").innerHTML=mensaje;
 // };
-
-
 // const compruebaNumeroSecreto=(texto)=>{
 //     const numero = parseInt(texto);
 //     const esNum=!isNaN(numero);
@@ -580,8 +536,7 @@ emoticonos:
 //         :  (numero<numeroParaAdivinar&&intentos>0)
 //             ?esNumMayor
 //             :esNumMenor;
-// };
-
+// }
 // const restarIntentos=()=>{
 //     intentos--
 //     intentosR.innerHTML=`Te quedan ${intentos} intentos`;
@@ -589,18 +544,233 @@ emoticonos:
 //         sinIntentos()
 //     }
 // };
-
 // const sinIntentos=()=>{
 //     intentosR.innerHTML=`Te quedaste sin intentos...`
 //     document.getElementById("boton").disabled=true;
 //     muestraMensajeDeComprobacion("",perder);
 // }
-
 // const handleClick=()=>{
 //     const texto=document.getElementById("input").value;
 //     const estado=compruebaNumeroSecreto(texto);
 //     muestraMensajeDeComprobacion(texto,estado);
 // }
-
 // const boton=document.getElementById("boton");
 // boton.addEventListener("click",handleClick);
+
+// const nombres = [
+//   "Miguel",
+//   "Luis",
+//   "Ana",
+//   "Maria",
+//   "Pedro",
+//   "Juan",
+//   "Sara",
+//   "Lucia",
+//   "Pablo",
+//   "Sofia",
+// ];
+
+// const mostrarNombreEnPagina = (nombre) => {
+//   const div = document.getElementById("lista-nombres");
+//   const parrafo = document.createElement("p");
+//   parrafo.textContent = nombre;
+//   div.appendChild(parrafo);
+// };
+// for (let i = 0; i < nombres.length; i++) {
+//   mostrarNombreEnPagina(nombres[i]);
+// }
+
+//----------------------------------------------
+
+// const ropa = [
+//   {
+//     foto: "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-1.jpg",
+//     tipoProducto: "Camisa",
+//     precio: 25,
+//   },
+//   {
+//     foto: "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-2.jpg",
+//     tipoProducto: "Camiseta",
+//     precio: 22.99,
+//   },
+//   {
+//     foto: "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-3.jpg",
+//     tipoProducto: "Vestido",
+//     precio: 34.99,
+//   },
+//   {
+//     foto: "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-4.jpg",
+//     tipoProducto: "Vaqueros",
+//     precio: 79.99,
+//   },
+//   {
+//     foto: "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-5.jpg",
+//     tipoProducto: "Polo",
+//     precio: 44.95,
+//   },
+//   {
+//     foto: "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-6.jpg",
+//     tipoProducto: "Camisa",
+//     precio: 44.99,
+//   },
+// ];
+
+// const mostrarRopaEnPagina = (ropa) => {
+//   const div = document.getElementById("lista-ropa");
+//   const imagen = document.createElement("img");
+//   const parrafo = document.createElement("p");
+//   const precio = document.createElement("p");
+//   const cardDiv = document.createElement("div");
+
+//   imagen.src = ropa.foto;
+//   parrafo.textContent = ropa.tipoProducto;
+//   precio.textContent = `${ropa.precio}€`;
+//   cardDiv.setAttribute("class", "card");
+
+//   div.appendChild(cardDiv);
+//   cardDiv.appendChild(imagen);
+//   cardDiv.appendChild(parrafo);
+//   cardDiv.appendChild(precio);
+// };
+
+// const muestraColeccionDePrendas = (ropa) => {
+//   for (let i = 0; i < ropa.length; i++) {
+//     mostrarRopaEnPagina(ropa[i]);
+//   }
+// };
+
+// let carrito = [
+//   {
+//     tipoProducto: "Vestido",
+//     precio: 34.99,
+//   },
+//   {
+//     tipoProducto: "Vaqueros",
+//     precio: 79.99,
+//   },
+// ];
+
+// const sonLosGastosDeEnvioGratis = () => {
+//   let total = 0;
+//   for (let i = 0; i < carrito.length && total < 100; i++) {
+//     total += carrito[i].precio;
+//   }
+//   return total > 100;
+// };
+
+// const esGratis = () => sonLosGastosDeEnvioGratis();
+
+// // for (let i = 0; i < carrito.length; i++) {
+// //   const prenda = carrito[i];
+// //   console.log(prenda.precio, prenda.tipoProducto);
+// // }
+
+// const recorremosElCarrito = () => {
+//   for (let i = 0; i < carrito.length; i++) {
+//     const prenda = carrito[i];
+//     console.log(prenda.precio, prenda.tipoProducto);
+//   }
+// };
+
+// const comprobarSiHayGastosDeEnvioGratis = () => {
+//   if (sonLosGastosDeEnvioGratis() === true) {
+//     const div = document.getElementById("gastos-de-envios");
+//     const parrafo = document.createElement("p");
+//     parrafo.textContent = "Gastos de envio gratis";
+//     div.appendChild(parrafo);
+//   } else {
+//     const div = document.getElementById("gastos-de-envios");
+//     const parrafo = document.createElement("p");
+//     parrafo.textContent = "Gastos de envio 5€";
+//     div.appendChild(parrafo);
+//   }
+// };
+
+// carrito.push({
+//   tipoProducto: "camiseta",
+//   precio: 22.99,
+// });
+
+// carrito.splice();
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   muestraColeccionDePrendas(ropa);
+//   comprobarSiHayGastosDeEnvioGratis();
+//   recorremosElCarrito();
+// });
+
+//------------------------------------------
+
+// const modificandoArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// modificandoArray[0] = 100;
+// console.log(modificandoArray);
+
+// const manolo = {
+//   nombre: "Manolo",
+//   edad: 25,
+// };
+
+// const personas = [
+//   manolo,
+//   {
+//     nombre: "Miguel",
+//     edad: 25,
+//   },
+//   {
+//     nombre: "Luis",
+//     edad: 25,
+//   },
+//   {
+//     nombre: "Ana",
+//     edad: 35,
+//   },
+// ];
+// personas[0] = {
+//   ...personas[0],
+//   edad: 21,
+// };
+
+/*
+1.Valores de personas[0]
+{
+  {
+    nombre: "Manolo",
+    edad: 21,
+  }
+}
+al poner los tres puntos delante de personas[0] estamos creando un nuevo objeto con los valores de personas[0] y modificando la edad a 21
+*/
+
+// console.log(manolo);
+// console.log(personas);
+
+// const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const pares = [];
+// const impares = [];
+// for (let i = 0; i < numeros.length; i++) {
+//   if (numeros[i] % 2 === 0) {
+//     pares.push(numeros[i]);
+//   } else {
+//     impares.push(numeros[i]);
+//   }
+// }
+// console.log(pares);
+// console.log(impares);
+
+//----------------------------------------------
+
+// const peliculas = [
+//   "el padrino",
+//   "el padrino 2",
+//   "el padrino 3",
+//   "pulp fiction",
+//   "kill bill",
+//   "reservoir dogs",
+// ];
+
+// const peliculasVistas = [...peliculas.slice(0, 1), ...peliculas.slice(2, 6)];
+// console.log(peliculas);
+// console.log(peliculasVistas);
+// //--------------------------------
+
+//realizando un ejemplo de reservas de un hotel

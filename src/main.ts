@@ -1,109 +1,180 @@
-// Tendrás que generar un número aleatorio que sea del 1 al 6.
+type Especialidad = "Medico de familia" | "Pediatra" | "Cardiólogo";
 
-// Si sale el dado 6, hemos perdido la partida, has sacado un 6, has perdido. En caso contrario seguiremos tirando hasta llegar a 50 puntos o más has obtenido 50 puntos o mas, has ganado la partida.
-
-// En cualquier momento podrás plantarte, y mostrar el mensaje Te has plantado, tienes x puntos.
-
-// Muestra dichos mensajes en el html.
-
-// Create un proyecto donde generes el código con el juego (acuerdate de dividir el código, que cada función haga una cosa y solo una cosa...)
-// Del ejercicio anterior create otro proyecto donde separes el código en modelo, motor y ui.
-// En el último proyecto usaremos el caso anterior para aplicar testing a las funciones de motor.
-
-// Extra:
-// Tanto si has ganado o perdido al partida, bloquear el botón de tirar dado y el de plantarse
-// Si me planto, el botón de tirar también se bloqueará y de la misma manera el de plantarse.
-// Añade un css para darle estilado a tu html.
-
-const plantarse = document.getElementById("plantarse") as HTMLButtonElement;
-const intentosDiv = document.getElementById("intentos") as HTMLDivElement;
-const dadoImg = document.getElementById("dado") as HTMLImageElement;
-const resultadoDiv = document.getElementById("resultado") as HTMLDivElement;
-const mensajeDiv = document.getElementById("mensaje") as HTMLDivElement;
-
-
-let total = 0;
-let gameActive = true;
-
-const perder=()=> {
-    resultadoDiv.textContent = "Has perdido. Has sacado un 6.";
-    gameActive = false;
-    if(boton instanceof HTMLButtonElement)
-    boton.disabled = true;
-    plantarse.disabled = true;
-};
-
-const ganar=()=> {
-    resultadoDiv.textContent = "¡Felicidades! ¡Has ganado con 50 puntos o más!";
-    gameActive = false;
-    if(boton instanceof HTMLButtonElement)
-    boton.disabled = true;
-    plantarse.disabled = true;
-    }
-
-
-const actualizarIntentos=()=> {
-    intentosDiv.textContent = `Puntuación: ${total}`;
+interface NumeroPacientesPorEspecialidad {
+  medicoDeFamilia: number;
+  pediatria: number;
+  cardiologia: number;
+}
+interface Pacientes {
+  id: number;
+  nombre: string;
+  apellidos: string;
+  sexo: string;
+  temperatura: number;
+  frecuenciaCardiaca: number;
+  especialidad: Especialidad;
+  edad: number;
 }
 
-const actualizarDado=(valor: number)=> {
-    switch(valor){  
-        case 1:
-            dadoImg.src = `https://media.tenor.com/tCq5mfycACMAAAAi/d20-dice-roll.gif`;
-            dadoImg.alt = `Dado mostrando 1`;
-            break;
-        case 2:
-            dadoImg.src = `https://media.tenor.com/zTg9FhOqpDIAAAAi/d20-dice-roll.gif`;
-            dadoImg.alt = `Dado mostrando 2`;
-            break;
-        case 3:
-            dadoImg.src = `https://media.tenor.com/8UcqJlc93EgAAAAi/d20-dice-roll.gif`;
-            dadoImg.alt = `Dado mostrando 3`;
-            break;
-        case 4:
-            dadoImg.src = `https://media.tenor.com/l-95tTbEKGkAAAAm/d20-dice-roll.webp`;
-            dadoImg.alt = `Dado mostrando 4`;
-            break;
-        case 5:
-            dadoImg.src = `https://media.tenor.com/r7bAmy9lpJUAAAAm/d20-dice-roll.webp`;
-            dadoImg.alt = `Dado mostrando 5`;
-            break;
-        case 6:
-            dadoImg.src = `https://media.tenor.com/HEHpab5WZHwAAAAm/d20-dice-roll.webp`;
-            dadoImg.alt = `Dado mostrando 6`;
-            break;
-        default:
-            break;
-}};
+const pacientesCorregidos: Pacientes[] = [];
 
+const pacientes: Pacientes[] = [
+  {
+    id: 1,
+    nombre: "John",
+    apellidos: "Doe",
+    sexo: "Male",
+    temperatura: 36.8,
+    frecuenciaCardiaca: 80,
+    especialidad: "Medico de familia",
+    edad: 44,
+  },
+  {
+    id: 2,
+    nombre: "Jane",
+    apellidos: "Doe",
+    sexo: "Female",
+    temperatura: 36.8,
+    frecuenciaCardiaca: 70,
+    especialidad: "Medico de familia",
+    edad: 43,
+  },
+  {
+    id: 3,
+    nombre: "Junior",
+    apellidos: "Doe",
+    sexo: "Male",
+    temperatura: 36.8,
+    frecuenciaCardiaca: 90,
+    especialidad: "Pediatra",
+    edad: 8,
+  },
+  {
+    id: 4,
+    nombre: "Mary",
+    apellidos: "Wien",
+    sexo: "Female",
+    temperatura: 36.8,
+    frecuenciaCardiaca: 120,
+    especialidad: "Medico de familia",
+    edad: 20,
+  },
+  {
+    id: 5,
+    nombre: "Scarlett",
+    apellidos: "Somez",
+    sexo: "Female",
+    temperatura: 36.8,
+    frecuenciaCardiaca: 110,
+    especialidad: "Cardiólogo",
+    edad: 30,
+  },
+  {
+    id: 6,
+    nombre: "Brian",
+    apellidos: "Kid",
+    sexo: "Male",
+    temperatura: 39.8,
+    frecuenciaCardiaca: 80,
+    especialidad: "Pediatra",
+    edad: 11,
+  },
+];
 
-function eventos(){
-    if(boton instanceof HTMLButtonElement){
-boton.addEventListener("click", () => {
-    const numero = Math.floor(Math.random() * 6) + 1;
-    actualizarDado(numero);
-
-    total += numero;
-    actualizarIntentos();
-
-    if (numero === 6) {
-        perder();
+const obtenPacientesAsignadosAPediatria = (
+  pacientes: Pacientes[]
+): Pacientes[] => {
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra") {
+      console.log(pacientes[i]);
     }
-    if (total >= 50) {
-        ganar();
+  }
+  return pacientes;
+};
+
+const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
+  pacientes: Pacientes[]
+): Pacientes[] => {
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra" && pacientes[i].edad < 10) {
+      console.log(pacientes[i]);
     }
-});
+  }
+  return pacientes;
+};
 
-if(plantarse instanceof HTMLButtonElement){
-    plantarse.addEventListener("click", () => {
-        if (!gameActive) return; 
-    
-    resultadoDiv.textContent = `Te has plantado con ${total} puntos.`;
-    boton.disabled = true;
-    plantarse.disabled = true;
-    gameActive = false;
-    });
-        };
-};}
+const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
+  let activarProctolo = false;
+  for (let i = 0; i < pacientes.length; i++) {
+    if (
+      pacientes[i].frecuenciaCardiaca > 100 &&
+      pacientes[i].temperatura > 39
+    ) {
+      activarProctolo = true;
+    }
+  }
+  console.log("el protocolo de urgencias se ha activado:");
+  return activarProctolo;
+};
 
+const reasignaPacientesAMedicoFamilia = (
+  pacientes: Pacientes[]
+): Pacientes[] => {
+  let i = 0;
+  while (i < pacientes.length) {
+    if (pacientes[i].especialidad === "Pediatra") {
+      pacientesCorregidos[pacientesCorregidos.length] = {
+        ...pacientes[i],
+        especialidad: "Medico de familia",
+      };
+    } else {
+      pacientesCorregidos[pacientesCorregidos.length] = pacientes[i];
+    }
+    i++;
+  }
+  console.log(pacientesCorregidos);
+  return pacientesCorregidos;
+};
+
+const HayPacientesDePediatria = (pacientesCorregidos: Pacientes[]): boolean => {
+  let hayPacientesDePediatria = false;
+  for (let i = 0; i < pacientesCorregidos.length; i++) {
+    if (pacientesCorregidos[i].especialidad === "Pediatra") {
+      hayPacientesDePediatria = true;
+    }
+  }
+  console.log("hay pacientes de pediatria");
+  return hayPacientesDePediatria;
+};
+
+const cuentaPacientesPorEspecialidad = (
+  pacientes: Pacientes[]
+): NumeroPacientesPorEspecialidad => {
+  let medicoDeFamilia = 0;
+  let pediatria = 0;
+  let cardiologia = 0;
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Medico de familia") {
+      medicoDeFamilia++;
+    } else if (pacientes[i].especialidad === "Pediatra") {
+      pediatria++;
+    } else if (pacientes[i].especialidad === "Cardiólogo") {
+      cardiologia++;
+    }
+  }
+  console.log("pacientes por especialidad");
+  console.log(`Medico de familia: ${medicoDeFamilia}`);
+  console.log(`Pediatra: ${pediatria}`);
+  console.log(`Cardiólogo: ${cardiologia}`);
+  return { medicoDeFamilia, pediatria, cardiologia };
+};
+
+const eventos = () => {
+  obtenPacientesAsignadosAPediatria(pacientes);
+  obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes);
+  console.log(activarProtocoloUrgencia(pacientes));
+  reasignaPacientesAMedicoFamilia(pacientes);
+  console.log(HayPacientesDePediatria(pacientesCorregidos));
+  cuentaPacientesPorEspecialidad(pacientes);
+};
 eventos();

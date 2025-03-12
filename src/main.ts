@@ -85,11 +85,11 @@ const obtenPacientesAsignadosAPediatria = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
   console.log("asignados a pediatria:");
-  pacientes.filter((paciente: Pacientes) => {
-    if (paciente.especialidad === "Pediatra") {
-      console.log(paciente);
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra") {
+      console.log(pacientes[i]);
     }
-  });
+  }
   return pacientes;
 };
 
@@ -97,71 +97,78 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
   console.log("asignados a pediatria y menores de 10 años:");
-  pacientes.filter((paciente: Pacientes) => {
-    if (paciente.especialidad === "Pediatra" && paciente.edad < 10) {
-      console.log(paciente);
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Pediatra" && pacientes[i].edad < 10) {
+      console.log(pacientes[i]);
     }
-  });
+  }
   return pacientes;
 };
 
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   let activarProctolo = false;
-  pacientes.some((paciente: Pacientes) => {
-    if (paciente.temperatura > 39.5 && paciente.frecuenciaCardiaca > 100) {
-      activarProctolo;
+  for (let i = 0; i < pacientes.length; i++) {
+    if (
+      pacientes[i].frecuenciaCardiaca > 100 &&
+      pacientes[i].temperatura > 39
+    ) {
+      activarProctolo = true;
     }
-  });
-  console.log("activar protocolo de urgencia");
+  }
+  console.log("el protocolo de urgencias se ha activado:");
   return activarProctolo;
 };
 
-//esto lo hgo con un array nuevo para no estar modificando el inicial
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
   console.log("Reasigna pacientes  a Medico de familia");
-  const nuevosPacientes: Pacientes[] = pacientes.map((paciente: Pacientes) => {
-    if (paciente.especialidad === "Pediatra") {
-      return { ...paciente, especialidad: "Medico de familia" };
+  let i = 0;
+  while (i < pacientes.length) {
+    if (pacientes[i].especialidad === "Pediatra") {
+      pacientesCorregidos[pacientesCorregidos.length] = {
+        ...pacientes[i],
+        especialidad: "Medico de familia",
+      };
+    } else {
+      pacientesCorregidos[pacientesCorregidos.length] = pacientes[i];
     }
-    return paciente;
-  });
-  pacientesCorregidos.push(...nuevosPacientes);
+    i++;
+  }
   console.log(pacientesCorregidos);
-  return nuevosPacientes;
+  return pacientesCorregidos;
 };
 
-//aqui elijo el array nuevo por motivos obvios
 const HayPacientesDePediatria = (pacientesCorregidos: Pacientes[]): boolean => {
   let hayPacientesDePediatria = false;
-  pacientesCorregidos.find((paciente: Pacientes) => {
-    if (paciente.especialidad === "Pediatra") {
-      hayPacientesDePediatria;
+  for (let i = 0; i < pacientesCorregidos.length; i++) {
+    if (pacientesCorregidos[i].especialidad === "Pediatra") {
+      hayPacientesDePediatria = true;
     }
-  });
+  }
   console.log("hay pacientes de pediatria");
-  console.log(pacientesCorregidos);
   return hayPacientesDePediatria;
 };
-//cuento desde al array inicial por q creo q es el se busca contabilizar, sino solo es cambiar un array por otro
+
 const cuentaPacientesPorEspecialidad = (
   pacientes: Pacientes[]
 ): NumeroPacientesPorEspecialidad => {
   let medicoDeFamilia = 0;
   let pediatria = 0;
   let cardiologia = 0;
-  pacientes.forEach((paciente: Pacientes) => {
-    if (paciente.especialidad === "Medico de familia") {
+  for (let i = 0; i < pacientes.length; i++) {
+    if (pacientes[i].especialidad === "Medico de familia") {
       medicoDeFamilia++;
-    } else if (paciente.especialidad === "Pediatra") {
+    } else if (pacientes[i].especialidad === "Pediatra") {
       pediatria++;
-    } else if (paciente.especialidad === "Cardiólogo") {
+    } else if (pacientes[i].especialidad === "Cardiólogo") {
       cardiologia++;
     }
-  });
-  console.log("numero de pacientes por especialidad");
-  console.log({ medicoDeFamilia, pediatria, cardiologia });
+  }
+  console.log("pacientes por especialidad");
+  console.log(`Medico de familia: ${medicoDeFamilia}`);
+  console.log(`Pediatra: ${pediatria}`);
+  console.log(`Cardiólogo: ${cardiologia}`);
   return { medicoDeFamilia, pediatria, cardiologia };
 };
 

@@ -84,6 +84,7 @@ const pacientes: Pacientes[] = [
 const obtenPacientesAsignadosAPediatria = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
+  console.log("asignados a pediatria:");
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
       console.log(pacientes[i]);
@@ -95,6 +96,7 @@ const obtenPacientesAsignadosAPediatria = (
 const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
+  console.log("asignados a pediatria y menores de 10 años:");
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra" && pacientes[i].edad < 10) {
       console.log(pacientes[i]);

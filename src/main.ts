@@ -129,6 +129,7 @@ const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
 const reasignaPacientesAMedicoFamilia = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
+  console.log("Reasigna pacientes  a Medico de familia");
   let i = 0;
   while (i < pacientes.length) {
     if (pacientes[i].especialidad === "Pediatra") {

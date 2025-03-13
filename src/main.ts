@@ -84,27 +84,34 @@ const pacientes: Pacientes[] = [
 const obtenPacientesAsignadosAPediatria = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
-  console.log("asignados a pediatria:");
+  let pacientesAsignadosAPediatria: Pacientes[] = [];
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra") {
-      console.log(pacientes[i]);
+      pacientesAsignadosAPediatria = [
+        ...pacientesAsignadosAPediatria,
+        pacientes[i],
+      ];
     }
   }
-  return pacientes;
+  console.log("asignados a pediatria:");
+  return pacientesAsignadosAPediatria;
 };
 
 const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
-  console.log("asignados a pediatria y menores de 10 años:");
+  let pacientesDePediatriaYMenorDeDiezAños: Pacientes[] = [];
   for (let i = 0; i < pacientes.length; i++) {
     if (pacientes[i].especialidad === "Pediatra" && pacientes[i].edad < 10) {
-      console.log(pacientes[i]);
+      pacientesDePediatriaYMenorDeDiezAños = [
+        ...pacientesDePediatriaYMenorDeDiezAños,
+        pacientes[i],
+      ];
     }
   }
-  return pacientes;
+  console.log("asignados a pediatria y menores de 10 años:");
+  return pacientesDePediatriaYMenorDeDiezAños;
 };
-
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
   let activarProctolo = false;
   for (let i = 0; i < pacientes.length; i++) {
@@ -134,7 +141,7 @@ const reasignaPacientesAMedicoFamilia = (
     }
     i++;
   }
-  console.log(pacientesCorregidos);
+  console.log("reasignados a medico de familia:");
   return pacientesCorregidos;
 };
 
@@ -172,10 +179,10 @@ const cuentaPacientesPorEspecialidad = (
 };
 
 const eventos = () => {
-  obtenPacientesAsignadosAPediatria(pacientes);
-  obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes);
+  console.log(obtenPacientesAsignadosAPediatria(pacientes));
+  console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes));
   console.log(activarProtocoloUrgencia(pacientes));
-  reasignaPacientesAMedicoFamilia(pacientes);
+  console.log(reasignaPacientesAMedicoFamilia(pacientes));
   console.log(HayPacientesDePediatria(pacientesCorregidos));
   cuentaPacientesPorEspecialidad(pacientes);
 };
